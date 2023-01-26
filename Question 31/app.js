@@ -6,6 +6,7 @@
 //     - Reverse the countries array and capitalize each country and stored it as an array
 
 
+//     - Extract all the countries contain the word 'land' from the countries array and print it as array
 const countryList = [
 	"Afghanistan",
 	"Albania",
@@ -258,7 +259,7 @@ const countryList = [
 	"Åland Islands"
 ];
 
-let land = [];
+// let land = [];
 
 for (let i = 0; i < countryList.length; i++) {
     let arr = countryList[i].includes("land");
@@ -267,3 +268,59 @@ for (let i = 0; i < countryList.length; i++) {
     }
 }
 console.log(land);
+
+
+//     - Find the country containing the hightest number of characters in the countries array
+let longest = 0;
+let logC = "";
+
+for (let i = 0; i < countryList.length; i++) {
+    currentlongest = countryList[i].length;
+    if (longest < currentlongest) {
+        longest = currentlongest;
+        if (currentlongest == longest) {
+            logC = countryList[i];
+        }
+    }
+}
+
+console.log(`${longest} ${logC}`);
+
+
+//- Extract all the countries containing only four characters from the countries array and print it as array
+let logC = [];
+
+for (let i = 0; i < countryList.length; i++) {
+    currentlongest = countryList[i].length;
+    if (currentlongest == 4) {
+        logC.push(countryList[i]);
+    }
+}
+console.log(`${logC}`);
+
+
+//- Extract all the countries containing two or more words from the countries array and print it as array
+let string = [];
+let trimmed = [];
+for (let i = 0; i < countryList.length; i++) {
+    trimmed = countryList[i].split(" ");
+    if (trimmed.length >= 2) {
+        string.push(countryList[i]);
+    }
+}
+console.log(string);
+
+ let string = "Extract all the countries containing two or more words from the countries array and print it as array";
+function wordCount(str){
+    return string.trim().split(" ").length; 
+}
+console.log(`word Count is:- ${wordCount(string)}`);
+
+
+//- Reverse the countries array and capitalize each country and stored it as an array
+let capital = [];
+countryList.reverse();
+for (let i = 0; i < countryList.length; i++) {
+    capital.push(countryList[i].toUpperCase());
+}
+console.log(capital);
